@@ -12,7 +12,7 @@ import net.ntworld.mergeRequest.api.ApiCredentials
 import net.ntworld.mergeRequestIntegration.ApiProviderManager
 import net.ntworld.mergeRequestIntegrationIde.IdeInfrastructure
 import net.ntworld.mergeRequestIntegrationIde.compatibility.IntellijIdeApi
-import net.ntworld.mergeRequestIntegrationIde.compatibility.Version193Adapter
+import net.ntworld.mergeRequestIntegrationIde.compatibility.*
 import net.ntworld.mergeRequestIntegrationIde.infrastructure.internal.ProviderSettingsImpl
 import net.ntworld.mergeRequestIntegrationIde.infrastructure.internal.ServiceBase
 import net.ntworld.mergeRequestIntegrationIde.infrastructure.setting.ApplicationSettingsManager
@@ -56,7 +56,7 @@ abstract class AbstractApplicationServiceProvider : ApplicationServiceProvider, 
 
     override val infrastructure: Infrastructure = MemorizedInfrastructure(IdeInfrastructure())
 
-    override val intellijIdeApi: IntellijIdeApi = Version193Adapter()
+    override val intellijIdeApi: IntellijIdeApi = Version201Adapter()
 
     override val settingsManager: ApplicationSettingsManager = ApplicationSettingsManagerImpl()
 
